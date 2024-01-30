@@ -31,17 +31,17 @@
                     </div>
                 </header>
             @endif
-            <div class="grid lg:grid-cols-12">
+            <div class="grid lg:grid-cols-12 relative">
                 <div class="lg:col-span-2 lg:p-8 p-4 w-full bg-[#202A36] xl:block hidden shadow min-h-screen">
                     <div class="brand mb-8">
                         <a href="{{ route('dashboard') }}" class="inline-flex items-center text-white">
                             <x-application-mark class="block h-9 w-auto" />
-                            <span class="ml-4 text-3xl font-medium">Brand Name</span>
+                            <span class="ml-4 text-3xl font-medium">{{ env('APP_NAME') }}</span>
                         </a>
                     </div>
                     <ul class="text-white grid gap-y-2">
                         <li class="text-xl">
-                            <x-sidebar.nav-link>
+                            <x-sidebar.nav-link href="{{ route('dashboard') }}">
                                 <x-slot name="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
                                         <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
@@ -82,8 +82,11 @@
                 </div>
                 <!-- Page Content -->
                 <main class="col-span-10 w-full">
-                    <div class="grid bg-white min-h-[10vh]">
-                        <div class="flex w-11/12 items-center">
+                    <div class="grid bg-white min-h-[10vh] sticky top-0 shadow-lg">
+                        <div class="flex mx-auto w-11/12 items-center p-3">
+                            <div class="w-1/4">
+                                <x-form-search/>
+                            </div>
                             <div class="ml-auto relative">
                                 <x-dropdown align="right" width="48">
                                     <x-slot name="trigger">
