@@ -17,7 +17,7 @@ class="lg:col-span-2 p-8 w-full bg-[#202A36] xl:block xl:sticky xl:translate-x-0
     </div>
     <ul class="text-white grid gap-y-2">
         <li class="text-xl">
-            <x-sidebar.nav-link href="{{ route('dashboard') }}">
+            <x-sidebar.nav-link :active="request()->routeIs('dashboard')" href="{{ route('dashboard') }}">
                 <x-slot name="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-speedometer" viewBox="0 0 16 16">
@@ -31,7 +31,7 @@ class="lg:col-span-2 p-8 w-full bg-[#202A36] xl:block xl:sticky xl:translate-x-0
             </x-sidebar.nav-link>
         </li>
         <li class="text-xl">
-            <x-sidebar.nav-link-dropdown>
+        <x-sidebar.nav-link-dropdown :active="request()->routeIs('admin.blogs.*')">
                 <x-slot name="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-newspaper" viewBox="0 0 16 16">
@@ -46,15 +46,15 @@ class="lg:col-span-2 p-8 w-full bg-[#202A36] xl:block xl:sticky xl:translate-x-0
                     Blogs
                 </x-slot>
 
-                <ul class="grid ml-auto bg-slate-600 rounded-lg">
+                <ul class="grid ml-auto bg-slate-600 rounded-lg gap-2 p-2">
                     <li>
-                        <x-sidebar.nav-link class="hover:bg-white hover:text-slate-600 rounded-none first:rounded-t-lg">
-                            All Blogs
+                        <x-sidebar.nav-link :active="request()->routeIs('admin.blogs.index')" class="rounded-none" schema="dark">
+                            {{ __('All Blogs') }}
                         </x-sidebar.nav-link>
                     </li>
                     <li>
-                        <x-sidebar.nav-link class="hover:bg-white hover:text-slate-600 rounded-none last:rounded-b-lg">
-                            Add New Blogs
+                        <x-sidebar.nav-link :active="request()->routeIs('admin.blogs.create')" class="rounded-none" schema="dark">
+                            {{ __('Add New Blogs') }}
                         </x-sidebar.nav-link>
                     </li>
                 </ul>
