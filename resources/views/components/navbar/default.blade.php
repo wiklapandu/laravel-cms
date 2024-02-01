@@ -1,7 +1,16 @@
 <div class="grid bg-white min-h-[10vh] sticky top-0 shadow-lg">
     <div class="flex mx-auto w-11/12 items-center p-3">
         <div class="w-1/4">
-            <x-form-search />
+            <div class="flex">
+                <button type="button" @click="sideOpen = true" class=" xl:hidden inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+                <div class="xl:inline-block hidden w-full">
+                    <x-form-search />
+                </div>
+            </div>
         </div>
         <div class="ml-auto relative">
             <x-dropdown align="right" width="48">

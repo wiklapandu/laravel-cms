@@ -24,10 +24,8 @@
             {{-- @livewire('navigation-menu') --}}
 
             <!-- Page Heading -->
-            <div class="grid lg:grid-cols-12 relative">
-                <div class="lg:col-span-2 lg:p-8 p-4 w-full bg-[#202A36] xl:block hidden shadow min-h-screen">
-                    <x-sidebar.default />
-                </div>
+            <div x-data="{sideOpen: false}" class="grid lg:grid-cols-12 relative">
+                <x-sidebar.default />
                 <!-- Page Content -->
                 <main class="col-span-10 w-full">
                     <x-navbar.default />
