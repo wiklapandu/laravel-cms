@@ -1,7 +1,7 @@
-@props(['classes' => ''])
+@props(['classes' => '', 'active' => false])
 
-<span class="grid" x-data="{isActive: false}">
-    <button @click="isActive = !isActive" type="button" class="flex items-center hover:bg-white hover:text-slate-600 active:scale-95 hover:bg-opacity-95 cursor-pointer ease-in duration-150 p-4 rounded-xl group"
+<span class="grid" x-data="{isActive: {{ $active ? 'true' : 'false' }}}">
+    <button @click="isActive = !isActive" type="button" class="{{ $classes }} flex items-center hover:bg-white hover:text-slate-600 active:scale-95 hover:bg-opacity-95 cursor-pointer ease-in duration-150 p-4 rounded-xl group"
     :class="{'text-slate-600': isActive, 'bg-white': isActive}"
     >
         {{ $icon }}
