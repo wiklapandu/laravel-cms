@@ -24,7 +24,7 @@
             {{-- @livewire('navigation-menu') --}}
 
             <!-- Page Heading -->
-            <div x-data="{sideOpen: false}" class="grid lg:grid-cols-12 relative">
+            <div x-data="{sideOpen: false}" class="grid xl:grid-cols-12 relative">
                 <x-sidebar.default />
                 <!-- Page Content -->
                 <main class="col-span-10 w-full">
