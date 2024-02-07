@@ -18,7 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/debug', function () {
+    $fieldModel = new \App\Models\NoSql\Fields;
+    $fields = $fieldModel->find([
+        'category_id' => '570bf539-7d29-45e0-b40f-8f5c42902a23'
+    ]);
 
+    $fields = $fields->toArray();
+
+    return view('debug', compact('fields'));
 });
 
 Route::middleware([

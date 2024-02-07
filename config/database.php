@@ -148,4 +148,11 @@ return [
 
     ],
 
+    'nosql' => [
+        'client'    => env('NOSQL_CONNECTION', 'mongo'),
+        'default'   => [
+            'url'   => env('NOSQL_URL', 'mongodb://localhost:27017')
+        ]
+    ]
+
 ];
